@@ -1,0 +1,425 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/ModPage.cshtml";
+}
+
+<!-- contenedor principal del dashboard -->
+<div class="Dashboard" transition-style="in:wipe:cinematic">
+    <!-- contenedor del sidebar -->
+    <div class="sidebar">
+        <label class="sidebarTitle">Vista Moderador</label>
+        <label Id="subtitle">Menu</label>
+        <div class="page" id="page1">
+            <div class="pageIMG" id="pageIMG1">
+                <img src="/Resources/Home.png" id="pimg1">
+            </div>
+            <label class="pageLabel" id="plabel1">CRUD</label>
+        </div>
+        <div class="page" id="page2">
+            <div class="pageIMG" id="pageIMG2">
+                <img src="/Resources/Circle Chart.png" id="pimg2">
+            </div>
+            <label class="pageLabel" id="plabel2">Graficas</label>
+        </div>
+        <img src="/Resources/Black_Logo.png" id="Logo">
+    </div>
+    <!-- Contenedor de la informacion y despliegue de datos -->
+    <div class="datalayout">
+        <!-- contenedor superior de informacion -->
+        <div class="top">
+            <label id="currentpage" style="font-style: italic;">SDASDA</label>
+        </div>
+        <!-- pagina del CRUD -->
+        <div class="main1" id="main1" transition-style="in:wipe:right">
+            <!-- contenedor del CRUD -->
+            <div class="CRUD" id="style-1">
+                <div class="filter">
+                    <label>Que le gustaria Mostrar?</label>
+                    <select id="tablafiltrada" onchange="Filtrar()">
+                        <option value="Opcion1">Autores</option>
+                        <option value="Opcion2">Categorias</option>
+                        <option value="Opcion4">Libros</option>
+                        <option value="OpcionL">Libro</option>
+                        <option value="Opcion8">Resenas</option>
+                        <option value="Opcion10">Usuarios</option>
+                    </select>
+                </div>
+                <!-- Tablas -->
+                <table id="tabla1" class="cell-border" transition-style="in:circle:center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido1</th>
+                            <th>Apellido2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="tabla2" class="cell-border" transition-style="in:circle:center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="tabla4" class="cell-border" transition-style="in:circle:center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ID_Prestamo</th>
+                            <th>ISBN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="tablaL" class="cell-border" transition-style="in:circle:center">
+                    <thead>
+                        <tr>
+                            <th>ISBN</th>
+                            <th>Titulo</th>
+                            <th>AñoPublicacion</th>
+                            <th>ID_Autor</th>
+                            <th>ID_Editorial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="tabla8" class="cell-border" transition-style="in:circle:center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Comentario</th>
+                            <th>Puntuacion</th>
+                            <th>ID_Usuario</th>
+                            <th>ID_Libro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="tabla10" class="cell-border" transition-style="in:circle:center">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuario</th>
+                            <th>Password</th>
+                            <th>ID_Rol</th>
+                            <th>NombreCompleto</th>
+                            <th>Telefono</th>
+                            <th>Direccion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- botones y elementos para el CRUD -->
+            <div class="crudbuttons">
+                <button class="crudbutton" id="Insert">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front text">CREAR</span>
+                </button>
+                <button class="crudbutton" id="Update">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front text">ACTUALIZAR</span>
+                </button>
+                <button class="crudbutton" id="Delete">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front text">BORRAR</span>
+                </button>
+                <form action="/Account/Logout" method="post" style="display:inline;" id="CS">
+                    <button type="button" class="crudbutton" id="CerrarSesion" onclick="Redireccionar()">
+                        <span class="shadow"></span>
+                        <span class="edge"></span>
+                        <span class="front text">CERRAR SESION</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- pagina de Graficas -->
+        <div class="main2" id="main2" transition-style="in:wipe:right">
+            <h1>No tiene permisos para ver las Graficas</h1>
+        </div>
+    </div>
+</div>
+<div class="formBox" id="tabla1formbox">
+    <form id="tabla1form">
+        <div class="user-box">
+            <input type="number" name="ID" required="" id="tabla1id" autocomplete=off>
+            <label>ID</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="Nombre" required="" id="tabla1nombre" autocomplete=off>
+            <label>Nombre</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="Apellido1" required="" id="tabla1apellido1" autocomplete=off>
+            <label>Apellido1</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="Apellido2" required="" id="tabla1apellido2" autocomplete=off>
+            <label>Apellido2</label>
+        </div>
+        <div class="formbuttons">
+            <button type="button" class="cancelbutton">
+                <span>
+                    CANCEL
+                </span>
+            </button>
+            <button type="button" class="acceptbutton">
+                <span>
+                    ACCEPT
+                </span>
+            </button>
+        </div>
+    </form>
+</div>
+<div class="formBox" id="tabla2formbox">
+    <form id="tabla2form">
+        <div class="user-box">
+            <input type="number" name="ID" required="" id="tabla2id" autocomplete=off>
+            <label>ID</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="Categoria" required="" id="tabla2categoria" autocomplete=off>
+            <label>Categoria</label>
+        </div>
+        <div class="formbuttons">
+            <button type="button" class="cancelbutton">
+                <span>
+                    CANCEL
+                </span>
+            </button>
+            <button type="button" class="acceptbutton">
+                <span>
+                    ACCEPT
+                </span>
+            </button>
+        </div>
+    </form>
+</div>
+<div class="formBox" id="tabla4formbox">
+    <form id="tabla4form">
+        <div class="user-box">
+            <input type="number" name="ID" required="" id="tabla4id" autocomplete=off>
+            <label>ID</label>
+        </div>
+        <div class="user-box">
+            <input type="number" name="Prestamo" required="" id="tabla4prestado" autocomplete=off>
+            <label>ID_Prestamo</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="ISBN" required="" id="tabla4isbn" autocomplete=off>
+            <label>ISBN</label>
+        </div>
+        <div class="formbuttons">
+            <button type="button" class="cancelbutton">
+                <span>
+                    CANCEL
+                </span>
+            </button>
+            <button type="button" class="acceptbutton">
+                <span>
+                    ACCEPT
+                </span>
+            </button>
+        </div>
+    </form>
+</div>
+
+<div class="formBox" id="tabla4.5formbox">
+    <form id="tabla4.5form">
+        <div class="user-box">
+            <input type="text" name="ISBN" required="" id="tabla4.5isbn" autocomplete=off>
+            <label>ISBN</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="Titulo" required="" id="tabla4.5titulo" autocomplete=off>
+            <label>Titulo</label>
+        </div>
+        <div class="user-box">
+            <input type="date" name="AnoPublicacion" required="" id="tabla4.5anopub" autocomplete=off>
+            <label>AnoPublicacion</label>
+        </div>
+        <div class="user-box">
+            <input type="number" name="Autor" required="" id="tabla4.5autor" autocomplete=off>
+            <label>ID_Autor</label>
+        </div>
+        <div class="user-box">
+            <input type="number" name="Editorial" required="" id="tabla4.5editorial" autocomplete=off>
+            <label>ID_Editorial</label>
+        </div>
+        <div class="user-box">
+            <input type="url" name="Imagen" required="" id="tabla4.5img" autocomplete=off value="SinImagen">
+            <label>Link de la Imagen</label>
+        </div>
+        <div class="formbuttons">
+            <button type="button" class="cancelbutton">
+                <span>
+                    CANCEL
+                </span>
+            </button>
+            <button type="button" class="acceptbutton">
+                <span>
+                    ACCEPT
+                </span>
+            </button>
+        </div>
+    </form>
+</div>
+<div class="formBox" id="tabla8formbox">
+    <form id="tabla8form">
+        <div class="user-box">
+            <input type="number" name="ID" required="" id="tabla8id" autocomplete=off>
+            <label>ID</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="Comentario" required="" id="tabla8com" autocomplete=off>
+            <label>Comentario</label>
+        </div>
+        <div class="user-box">
+            <input type="tel" name="Puntuacion" required="" id="tabla8punct" autocomplete=off>
+            <label>Puntuacion</label>
+        </div>
+        <div class="user-box">
+            <input type="number" name="ID_Usuario" required="" id="tabla8idu" autocomplete=off>
+            <label>ID_Usuario</label>
+        </div>
+        <div class="user-box">
+            <input type="number" name="ID_Libro" required="" id="tabla8idl" autocomplete=off>
+            <label>ID_Libro</label>
+        </div>
+        <div class="formbuttons">
+            <button type="button" class="cancelbutton">
+                <span>
+                    CANCEL
+                </span>
+            </button>
+            <button type="button" class="acceptbutton">
+                <span>
+                    ACCEPT
+                </span>
+            </button>
+        </div>
+    </form>
+</div>
+<div class="formBox" id="tabla10formbox">
+    <form id="tabla10form">
+        <div class="user-box">
+            <input type="number" name="ID" required="" id="tabla10id" autocomplete=off>
+            <label>ID</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="Usuario" required="" id="tabla10usuario" autocomplete=off>
+            <label>Usuario</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="Password" required="" id="tabla10password" autocomplete=off>
+            <label>Password</label>
+        </div>
+        <div class="user-box">
+            <input type="number" name="Rol" required="" id="tabla10rol" autocomplete=off>
+            <label>ID_Rol</label>
+
+        </div>
+        <div class="user-box">
+            <input type="text" name="Nombre" required="" id="tabla10nombre" autocomplete=off>
+            <label>Nombre</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="ApellidoP" required="" id="tabla10apellido1" autocomplete=off>
+            <label>Apellido Paterno</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="ApellidoM" id="tabla10apellido2" autocomplete=off value=" ">
+            <label>Apellido Materno</label>
+        </div>
+        <div class="user-box">
+            <input type="number" name="Telefono" required="" id="tabla10tel" autocomplete=off>
+            <label>Telefono</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="Direccion" required="" id="tabla10direc" autocomplete=off>
+            <label>Direccion</label>
+        </div>
+        <div class="formbuttons">
+            <button type="button" class="cancelbutton">
+                <span>
+                    CANCEL
+                </span>
+            </button>
+            <button type="button" class="acceptbutton">
+                <span>
+                    ACCEPT
+                </span>
+            </button>
+        </div>
+    </form>
+</div>
+
+
+<div id="Error"></div>
+
+<div class="Cargando" id="Cargando">
+    <div class="spinner"></div>
+    <label> Cargando! </label>
+</div>

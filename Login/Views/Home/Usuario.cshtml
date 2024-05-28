@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Usuario";
+    Layout = "~/Views/Shared/UsuarioPage.cshtml";
+    var Usuario = Session["Usuario"];
+    var ID = Session["ID"];
+}
+
+<!-- Menú Horizontal Fijado -->
+<header class="menu-arriba">
+    <!-- Logo de la página -->
+    <div class="menu-logo">
+        <img src="~/Resources/Black_Logo.png" alt="Sanctuary Books Library">
+        <h3>Biblioteca</h3>
+    </div>
+    <!-- Navegación principal -->
+    <nav class="menu-secciones">
+        <ul>
+            <li id="btnhome">Home</li>
+            <li id="btncat">Catalogo</li>
+            <li id="btnpres">Prestamos</li>
+        </ul>
+    </nav>
+    <form action="/Account/Logout" method="post" style="display:inline;" id="CS">
+        <button type="button" class="crudbutton" id="CerrarSesion" onclick="Redireccionar()">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front text">CERRAR SESION</span>
+        </button>
+    </form>
+    <ul style="margin-left:clamp(0vw,45vw,45vw)">
+        <li>Usuario: </li>
+        <li id="usuario">@Usuario</li>
+    </ul>
+</header>
+
+<!--Contenido de la pagina HOME-->
+<section class="sec1" id="sec1" transition-style="in:wipe:cinematic">
+    <!-- 1.- Muestra una imagen y texto en el mismo contenedor -->
+    <div class="card-container-image_text">
+        <!-- 1.1.- Muestra la imagen en Home_Cliente-->
+        <div class="contenedor-imagen">
+            <img src="~/Resources/Imagen_Home.jpg" alt="Descripción de la imagen">
+        </div>
+        <!-- 1.2.- Muestra la informacion centrada en la imagen -->
+        <div class="conoc">
+            <img src="~/Resources/Catalogo_Libros.jpg">
+            <div class="card-text">
+                <h2>Conócenos</h2>
+                <p>
+                    Nuestra biblioteca digital ofrece una vasta colección de recursos que abarcan desde clásicos literarios
+                    hasta investigaciones académicas actuales.
+                </p><br><br>
+                <p>
+                    La misión de nuestra página web es democratizar el acceso a la información y el conocimiento. Creemos que
+                    todos deben tener la oportunidad de aprender y crecer, y nos esforzamos por proporcionar los recursos
+                    necesarios de manera gratuita y accesible.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- 2.- Sección de Libros Destacados -->
+    <div id="books-section">
+        <h2>Libros Destacados</h2>
+        <div id="books"></div>
+    </div>
+
+    <!-- 3.- Apartado de ver Catálogo -->
+    <div id="catalog-button">
+        <h2>¿Quieres ver nuestro catálogo de libros que tenemos?</h2>
+        <button id="view-catalog">Ver Catálogo</button>
+    </div>
+
+    <!-- 4.- Apartado de Solicitar un Libro -->
+    <div id="request-book">
+        <h2>¿Quieres solicitar un libro?</h2>
+        <button id="request-book-button">Eligue un Libro</button>
+    </div>
+
+    <!-- 5.- Sección de Redes Sociales -->
+    <div id="social-media">
+        <h2>Síguenos en nuestras Redes Sociales</h2>
+        <div id="social-icons">
+            <a href="#"><img src="~/Resources/Facebook_Icon.png" alt="Facebook"></a>
+            <a href="#"><img src="~/Resources/Twitter_Icon.png" alt="Twitter"></a>
+            <a href="#"><img src="~/Resources/Instagram_Icon.png" alt="Instagram"></a>
+        </div>
+    </div>
+</section>
+<!-- Contenido de la pestaña Catalogo-->
+<section class="sec2" id="sec2">
+    <img src="~/Resources/FondoBiblioteca.jpeg" alt="Descripción de la imagen" style="width:100vw;height: min-content; ">
+    <div id="categorias-libros">
+        <h2>Catalogo</h2>
+        <p>
+            Aquí encontrarás una amplia variedad de libros clasificados por diferentes categorías, como terror, romance,
+            ciencia ficción y más. Explora nuestras secciones para descubrir nuevas lecturas y sumérgete en emocionantes
+            historias.
+        </p>
+        <h2>Selecciona el que deseas consultar</h2>
+        <table id="tabla1" class="cell-border" onclick="mostrarVentana(event)">
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Titulo</th>
+                    <th>Autor</th>
+                    <th>Existencia</th>
+                    <th>Disponible</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<!-- Contenido de la pestaña Solicitar Libro-->
+<section class="sec3" id="sec3">
+    <img src="~/Resources/Imagen_Principal.jpg" alt="Descripción de la imagen" style="width:100vw;height: min-content; ">
+    <div id="info-libro">
+        <h2>Favor de ir a la pestaña de catalogo y solicitar un libro :D</h2>
+        <p>Pulsa el siguiente boton para ir directamente a catalogo</p>
+        <button id="view-catalogos" class="efecto-hover-button">Ver Catálogo</button>
+    </div>
+</section>
+
+
+
+<!-- Elementos necesarios para el Backend -->
+
+<div class="alerta" id="alerta">
+    <div class="tools">
+        <div class="circle" id="cerrar">
+            <span class="box"></span>
+        </div>
+    </div>
+    <label id="msgAlerta">Registro exitoso, porfavor inicia sesion</label>
+</div>
+
+<div class="Cargando" id="Cargando">
+    <div class="spinner"></div>
+    <label> Cargando! </label>
+</div>
+
+<label id="userid" style="display:none">@ID</label>

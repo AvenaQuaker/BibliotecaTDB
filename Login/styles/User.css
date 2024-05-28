@@ -1,0 +1,669 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+@import "https://unpkg.com/transition-style";
+
+/* Establece márgenes y padding a 0 para todos los elementos */
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+body {
+  height: max-content;
+  transition: opacity 1s ease-in-out;
+  background-color: #0e0701;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #000000;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+body ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #000000;
+}
+
+body ::-webkit-scrollbar {
+  width: 7px;
+  background-color: #F5F5F5;
+}
+
+body ::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+/*MENU VERTICAL FIJO*/
+/* Estilos para el encabezado con clase "menu-arriba" */
+.menu-arriba {
+  position: fixed;
+  /* Fija el encabezado en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Hace que el encabezado ocupe el 100% del ancho */
+  display: flex;
+  /* Utiliza flexbox para organizar el contenido */
+  gap: 1rem;
+  transition: 0.7s;
+  /* Transición suave para cambios de estilo */
+  padding: 30px 20px;
+  /* Espaciado interno del encabezado */
+  z-index: 3;
+  /* Asegura que el encabezado se superponga a otros elementos */
+  background-color: #11270B;
+}
+
+.menu-arriba img:hover{
+  transform: scale(1.1);
+}
+
+.menu-arriba li:hover{
+  transform: scale(1.1);
+}
+
+.menu-arriba.menu-abajo {
+  background: #236C2B;
+  padding: 15px 20px;
+}
+
+.menu-arriba.menu-abajo img:hover{
+  transform: scale(1.1);
+}
+
+.menu-arriba.menu-abajo li:hover{
+  transform: scale(1.1);
+}
+
+
+
+.menu-arriba.menu-abajo .menu-logo,
+.menu-arriba.menu-abajo ul li {
+  color: #000;
+  /* Cambia el color del texto a negro */
+}
+
+.menu-arriba ul {
+  position: relative;
+  /* Posiciona la lista relativamente a su contenedor */
+  display: flex;
+  /* Utiliza flexbox para organizar el contenido */
+  justify-content: center;
+  /* Centra los elementos horizontalmente */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+}
+
+.menu-arriba ul li {
+  list-style: none;
+  /* Elimina los puntos de lista predeterminados */
+  position: relative;
+  /* Posiciona el enlace relativamente a su contenedor */
+  margin: 0 15px;
+  /* Márgenes a los lados de cada enlace */
+  text-decoration: none;
+  /* Sin subrayado */
+  color: #3FA34D;
+  /* Color del texto del enlace */
+  letter-spacing: 2px;
+  /* Espaciado entre letras */
+  font-weight: 600;
+  /* Texto semi-negrita */
+  transition: 0.7s;
+  /* Transición suave para cambios de estilo */
+}
+
+.menu-arriba .menu-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-arriba .menu-logo img {
+  width: 50px;
+  /* Establece el ancho de la imagen en 50px */
+  height: 50px;
+  /* Establece la altura de la imagen en 50px */
+}
+
+/* Estilos para la navegacion que tiene la clase "menu-secciones" */
+.menu-secciones {
+  display: flex;
+  /* Utiliza flexbox para organizar el contenido */
+  justify-content: center;
+  /* Centra los elementos horizontalmente */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+}
+
+section {
+  display: flex;
+  /* Utiliza flexbox para organizar el contenido */
+  height: 100%;
+  overflow: hidden;
+}
+
+section.sec1 {
+  display: flex;
+  flex-direction: column;
+}
+
+section.sec2 {
+  display: flex;
+  flex-direction: column;
+}
+
+section.sec1 .conoc {
+
+  display: flex;
+  flex-direction: row;
+  height: -moz-max-content;
+  height: max-content;
+  background: linear-gradient(0deg, #000000, #08270c 30%);
+}
+
+section.sec1 .conoc img {
+  padding: 2.5rem;
+  border-radius: 4rem;
+  -o-object-fit: contain;
+  object-fit: contain;
+  transition: all 0.5s ease-in-out;
+}
+
+section.sec1 .conoc img:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+section.sec1 .conoc .card-text {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+section.sec1 .conoc .card-text h2 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+section.sec1 .conoc .card-text p {
+  text-align: justify;
+  font-size: 1.3rem;
+  font-weight: 150;
+  line-height: 1.8rem;
+  color: whitesmoke;
+}
+
+section.sec1 .contenedor-imagen {
+  width: 100vw;
+  height: 80vh;
+}
+
+section.sec1 .contenedor-imagen img {
+  width: 100vw;
+  height: 80vh;
+}
+
+.alerta {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 10%;
+  left: 75%;
+  width: 25rem;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 0 auto;
+  background-color: #F8FBFE;
+  border-radius: 8px;
+  z-index: 1;
+  padding: 1rem;
+  font-size: 1.5em;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  text-align: center;
+}
+
+.alerta .tools {
+  display: flex;
+  padding-bottom: 1rem;
+  justify-content: end;
+}
+
+.alerta .circle {
+  padding: 0 0.5rem;
+}
+
+.alerta .box {
+  display: flex;
+  align-items: end;
+  width: 1rem;
+  height: 1rem;
+  padding: 1px;
+  border-radius: 50%;
+  background-color: #ff605c;
+}
+
+.Cargando {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.Cargando label {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(250, 236, 209);
+}
+
+.Cargando .spinner {
+  filter: invert(1);
+}
+
+.Cargando .spinner:before {
+  transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
+  animation: 750ms rotateBefore infinite linear reverse;
+}
+
+.Cargando .spinner:after {
+  transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
+  animation: 750ms rotateAfter infinite linear;
+}
+
+.Cargando .spinner:before,
+.Cargando .spinner:after {
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  position: absolute;
+  margin-top: -5em;
+  margin-left: -5em;
+  width: 10em;
+  height: 10em;
+  transform-style: preserve-3d;
+  transform-origin: 50%;
+  transform: rotateY(50%);
+  perspective-origin: 50% 50%;
+  perspective: 340px;
+  background-size: 10em 10em;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2NnB4IiBoZWlnaHQ9IjI5N3B4IiB2aWV3Qm94PSIwIDAgMjY2IDI5NyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+CiAgICA8dGl0bGU+c3Bpbm5lcjwvdGl0bGU+CiAgICA8ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8cGF0aCBkPSJNMTcxLjUwNzgxMywzLjI1MDAwMDM4IEMyMjYuMjA4MTgzLDEyLjg1NzcxMTEgMjk3LjExMjcyMiw3MS40OTEyODIzIDI1MC44OTU1OTksMTA4LjQxMDE1NSBDMjE2LjU4MjAyNCwxMzUuODIwMzEgMTg2LjUyODQwNSw5Ny4wNjI0OTY0IDE1Ni44MDA3NzQsODUuNzczNDM0NiBDMTI3LjA3MzE0Myw3NC40ODQzNzIxIDc2Ljg4ODQ2MzIsODQuMjE2MTQ2MiA2MC4xMjg5MDY1LDEwOC40MTAxNTMgQy0xNS45ODA0Njg1LDIxOC4yODEyNDcgMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IDE0NS4yNzczNDQsMjk2LjY2Nzk2OCBDMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IC0yNS40NDkyMTg3LDI1Ny4yNDIxOTggMy4zOTg0Mzc1LDEwOC40MTAxNTUgQzE2LjMwNzA2NjEsNDEuODExNDE3NCA4NC43Mjc1ODI5LC0xMS45OTIyOTg1IDE3MS41MDc4MTMsMy4yNTAwMDAzOCBaIiBpZD0iUGF0aC0xIiBmaWxsPSIjMDAwMDAwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==");
+}
+
+@keyframes rotateBefore {
+  from {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+  }
+}
+
+@keyframes rotateAfter {
+  from {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+  }
+}
+
+/*# sourceMappingURL=inicio.css.map */
+/* Estilos para cada sección dentro de sec1 */
+#books-section {
+  background: radial-gradient( #258330 40%, #050c04 90%);
+  padding: 2rem;
+
+}
+
+
+#catalog-button {
+  background: url(../Resources/Catalogo_Libros.jpg);
+  background-size: cover;
+  padding: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+#request-book {
+  background: url(../Resources/FondoAmanecer.jpg);
+  padding: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
+}
+
+#social-media {
+  background: linear-gradient(0deg, #16220f 10%, #236C2B);
+  padding: 2rem;
+
+}
+
+/* Estilos adicionales para el texto en cada sección */
+#books-section h2,
+#catalog-button h2,
+#request-book h2,
+#social-media h2 , #info-libro h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+#books {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#books img {
+  width: 20rem;
+  height: 30rem;
+  border-radius: 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+#books img:hover {
+  transform: scale(1.05);
+}
+
+#btnpres{
+    display:none;
+}
+
+#catalog-button button,
+#request-book button {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #3FA34D;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+#catalog-button button:hover,
+#request-book button:hover {
+  background-color: #2e9e39;
+}
+
+#social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#social-icons a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.5s ease-in-out;
+}
+
+#social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+/* Para centrar horizontal y verticalmente el contenido dentro de los div */
+#books-section,
+#catalog-button,
+#request-book,
+#social-media,
+#tabla-libros,
+#categorias-libros,#info-libro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#books-section {
+  width: 100vw;
+  height: 65vh;
+}
+#catalog-button,
+#request-book{
+  width: 100vw;
+  height: 20vh;
+}
+
+#tabla-libros,
+#categorias-libros, #info-libro{
+  width: 100vw;
+  height: 60vh;
+
+}
+
+#tabla1_wrapper{
+    width:80%;
+}
+
+#tabla1{
+    width:100% !important;
+}
+
+#books-section h2,
+#catalog-button h2,
+#request-book h2,
+#social-media h2,
+.card-text h2, #categorias-libros h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    place-self: center;
+}
+
+/*CATALOGO*/
+/* Estilos para el contenido de la sección de categorías de libros (categorias-libros) */
+
+
+#categorias-libros p {
+  max-width: 900px;
+  overflow: hidden;
+  color: #ffffff;
+  place-self:center;
+}
+#categorias-libros,
+#tabla-libros, #info-libro {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#tabla-libros,
+#categorias-libros #info-libro {
+  background-color: #3FA34D;
+  /* Color de fondo para Solicitar un Libro */
+  background: #236C2B;
+  padding: 2rem;
+}
+.ventana{
+  background: #234f17;
+  width: 20%;
+  color: rgba(255, 255,255,1);
+  text-align: center;
+  padding: 15px;
+  min-height: 30px;
+  border-radius: 22px;
+  position: absolute;
+}
+#ventana-flotante {
+  position: fixed;
+  display: none; /* Ocultar inicialmente */
+  flex-direction: column;
+  z-index: 10; /* Capa por encima del resto del contenido */
+}
+#fondo {
+  width: 100%;
+  height: 0px; /* Proporciona una altura adecuada para el fondo del div */
+  background-size:cover; /* Asegura que la imagen de fondo se ajuste al tamaño del div */
+  background-position: center; /* Permite posicionar los elementos hijos relativos a este div */
+}
+
+#categorias-libros, #info-libro {
+  position: absolute; /* Posiciona este div sobre el fondo */
+  bottom: auto; /* Puede ajustarse según tus necesidades para dar espacio al texto */
+  left: 50%; /* Lo desplaza hasta el 50% del contenedor padre */
+  background-color: rgb(94, 155, 94); /* Añade un fondo blanco para resaltar el texto */
+  padding: 3rem; /* Añade espacio interno para el texto y los elementos hijos */
+  transition: 0.3s; /* Agrega transición para el efecto hover */
+  width: 60%; /* Ajusta el ancho del div al 80% del contenedor padre */
+  transform: translateX(-50%); /* Centra el div horizontalmente */
+  border-radius: 22px;
+  height: auto;
+  top: 20%;
+  place-items: start;
+}
+.efecto-hover-button {
+  /* Estilos regulares del botón */
+  background-color: #f1f1f1;
+  color: black;
+  padding: 10px 10px; /* Ajuste de espaciado entre arriba y abajo */
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.efecto-hover-button:hover {
+  background-color: #2e9e39;
+  color: #F8FBFE;
+  text-shadow: 0 0 5px rgba(0, 255, 34, 0.8); /* Texto con efecto neón */
+  box-shadow: 0 0 15px rgba(0, 255, 34, 0.8); /* Borde con efecto neón más pronunciado */
+}
+.efecto-hover-button-red {
+  /* Estilos regulares del botón */
+  background-color: #f1f1f1;
+  color: black;
+  padding: 10px 10px; /* Ajuste de espaciado entre arriba y abajo */
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.efecto-hover-button-red:hover {
+  background-color: #ff0000;
+  color: #F8FBFE;
+  text-shadow: 0 0 5px rgba(78, 2, 2, 0.8); /* Texto con efecto neón */
+  box-shadow: 0 0 15px rgb(251, 0, 0); /* Borde con efecto neón más pronunciado */
+}
+table {
+  border-collapse: collapse;
+  
+}
+
+th, td, tr {
+  padding: 10px;
+  border: 2px solid black;
+  background-color: white; /* Color de fondo blanco para las celdas */
+}
+
+#tabla1_wrapper {
+  align-self: center;
+}
+#info-libro img{
+  width: 20rem;
+  height: 30rem;
+  border-radius: 1rem;
+}
+
+label {
+  display: block; /* Muestra la etiqueta en una nueva línea */
+  margin-bottom: 10px; /* Agrega espacio debajo de la etiqueta */
+  margin-top: 10px;
+  font-weight: bold; /* Aplica negrita al texto de la etiqueta */
+}
+
+select {
+  padding: 8px; /* Añade relleno interior alrededor del texto del select */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Define un borde alrededor del select */
+  border-radius: 5px; /* Aplica esquinas redondeadas al select */
+  background-color: #f9f9f9; /* Color de fondo */
+  margin-bottom: 10px; /* Agrega espacio debajo de la etiqueta */
+}
+
+/* Estilos para las opciones (elementos option) dentro de la etiqueta select */
+option {
+  padding: 8px; /* Añade relleno interior alrededor del texto de la opción */
+  font-size: 14px; /* Tamaño de fuente */
+  background-color: #fff; /* Color de fondo de las opciones */
+  
+}
+
+/* Estilos para las opciones cuando se seleccionan */
+option:checked {
+  background-color: #3366ff; /* Cambia el color de fondo cuando se selecciona una opción */
+  color: #fff; /* Cambia el color del texto cuando se selecciona una opción */
+}
+.info-libro h2{
+  color: white;
+}
+#info-libro h1, p{
+  font-size: 20px;
+  color: #052608;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#info-libro p {
+  text-align: left; /* Ajusta la alineación del texto a la izquierda */
+}
+
+#CerrarSesion {
+    --width: 150px;
+    --timing: 2s;
+    border: 0;
+    width: var(--width);
+    padding-block: 1em;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    background: #131200;
+    transition: all 0.2s;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+     #CerrarSesion:hover {
+        background-image: linear-gradient( to right, rgb(250, 82, 82), rgb(250, 82, 82) 16.65%, rgb(190, 75, 219) 16.65%, rgb(190, 75, 219) 33.3%, rgb(76, 110, 245) 33.3%, rgb(76, 110, 245) 49.95%, rgb(64, 192, 87) 49.95%, rgb(64, 192, 87) 66.6%, rgb(250, 176, 5) 66.6%, rgb(250, 176, 5) 83.25%, rgb(253, 126, 20) 83.25%, rgb(253, 126, 20) 100%, rgb(250, 82, 82) 100% );
+        animation: var(--timing) linear dance6123 infinite;
+        transform: scale(1.1) translateY(-1px);
+    }
+
+@keyframes dance6123 {
+    to {
+        background-position: var(--width);
+    }
+}
+
+

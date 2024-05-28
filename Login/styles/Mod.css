@@ -1,0 +1,552 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+@import "https://unpkg.com/transition-style";
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/Resources/FondoBiblioteca.jpeg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.Dashboard {
+    filter: invert(0);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    background: #140f0f;
+    border-radius: 1.5rem;
+    color: white;
+    width: 160vh;
+    height: 95vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sidebar {
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+    padding: 2.5rem;
+    border-right: 1px solid #22202e;
+}
+
+    .sidebar .sidebarTitle {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    .sidebar #subtitle {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .sidebar .page {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar .pageIMG {
+        border-radius: 1rem;
+        background: #353340;
+        margin-right: 1rem;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar img {
+        filter: invert(0.5);
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .sidebar .pageLabel {
+        display: flex;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .sidebar #Logo {
+        filter: invert(0.7);
+        margin-top: auto;
+        width: 20vh;
+        height: 10vh;
+        align-self: flex-end;
+        transition: transform 0.5s ease;
+    }
+
+        .sidebar #Logo:hover {
+            transform: scale(1.1);
+        }
+
+.datalayout {
+    font-family: "Bahnschrift", "Roboto Condensed";
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 2rem;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    margin-right: 5%;
+}
+
+    .top #search {
+        font-size: 1rem;
+        margin-left: 1rem;
+        padding: 1rem;
+        background-color: #353340;
+        border-radius: 1rem;
+        border: transparent;
+        color: aliceblue;
+        width: 30vh;
+        height: 2vh;
+    }
+
+    .top #searchIMG {
+        width: 5vh;
+        height: 5vh;
+        margin-left: 1rem;
+    }
+
+    .top #currentpage {
+        font-size: 2rem;
+        position: relative;
+        margin-left: auto;
+        align-self: flex-end;
+    }
+
+.main1 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    height: 180vh;
+    overflow: auto;
+}
+
+    .main1 .CRUD {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main1 .filter {
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+        .main1 .filter select {
+            padding: 1vh;
+            margin-left: 1rem;
+            background: #1f1717;
+            width: 25vh;
+            height: 5vh;
+            color: lightgray;
+            border: transparent;
+            border-radius: 1rem;
+        }
+
+    .main1 #tabla_wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main1 .crudbuttons {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        align-items: center;
+        margin-top: 5rem;
+    }
+
+.main2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 180vh;
+    overflow: auto;
+}
+
+    .main2 label {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .main2 .chart {
+        margin-bottom: 2rem;
+    }
+
+.main1::-webkit-scrollbar {
+    display: none;
+}
+
+.main2::-webkit-scrollbar {
+    display: none;
+}
+
+.cell-border {
+    border-radius: 1rem;
+    background: #1f1717;
+    color: rgb(185, 185, 185);
+}
+
+div.dt-container select.dt-input {
+    padding: 4px;
+    color: #7961ff;
+}
+
+.crudbutton {
+    position: relative;
+    border: none;
+    background: transparent;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    font-weight: bold;
+}
+
+    .crudbutton#CerrarSesion .edge {
+        background: linear-gradient(to left, darkred 0%, red 8%, rgb(247, 106, 106) 92%, darkred 100%) !important;
+    }
+
+    .crudbutton#CerrarSesion .front {
+        background: rgb(255, 0, 0) !important;
+    }
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsla(0, 0%, 0%, 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left, #11270B 0%, #236C2B 8%, #3FA34D 92%, #11270B 100%);
+}
+
+.front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: #236C2B;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+button:hover {
+    filter: brightness(110%);
+}
+
+    button:hover .front {
+        transform: translateY(-6px);
+        transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+    }
+
+button:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+button:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+button:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+div.dt-container {
+    position: relative;
+    clear: both;
+    margin-top: 1rem;
+}
+
+table.dataTable {
+    width: 100% !important;
+    margin: 0 auto;
+    border-spacing: 0;
+}
+
+#tabla1_wrapper {
+    display: block;
+}
+
+#tabla2_wrapper {
+    display: block;
+}
+
+.formBox {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 55%;
+    left: 80%;
+    width: 25rem;
+    padding: 3rem;
+    transform: translate(-50%, -50%);
+    background: rgba(24, 20, 20, 0.987);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+    .formBox .user-box {
+        position: relative;
+    }
+
+        .formBox .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+
+        .formBox .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        .formBox .user-box input:focus ~ label,
+        .formBox .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #bdb8b8;
+            font-size: 12px;
+        }
+
+    .formBox form button {
+        outline: none;
+        cursor: pointer;
+        padding: 0.9rem 2rem;
+        margin-top: 40px;
+        letter-spacing: 4px;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        letter-spacing: 0.05rem;
+        font-weight: 700;
+        font-size: 17px;
+        border: none;
+        border-radius: 500px;
+        overflow: hidden;
+        color: ghostwhite;
+    }
+
+        .formBox form button.cancelbutton {
+            background: #ff0000;
+        }
+
+        .formBox form button.acceptbutton {
+            background: #20fd03;
+        }
+
+        .formBox form button span {
+            position: relative;
+            z-index: 10;
+            transition: color 0.4s;
+        }
+
+        .formBox form button:hover span {
+            color: rgb(0, 0, 0);
+        }
+
+        .formBox form button::before,
+        .formBox form button::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .formBox form button::before {
+            content: "";
+            background: #000;
+            width: 120%;
+            left: -10%;
+            transform: skew(30deg);
+            transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+        }
+
+        .formBox form button:hover::before {
+            transform: translate3d(100%, 0, 0);
+        }
+
+.formbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#Error {
+    font-family: "Bahnschrift", "Roboto Condensed";
+    font-style: italic;
+    font-size: 1.5rem;
+    display: flex;
+    position: fixed;
+    right: -1%;
+    bottom: 5%;
+    color: white;
+    padding: 2rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.donut-chart svg text[fill="#000000"] {
+    fill: #CFD8DC;
+}
+
+.donut-chart svg path[stroke="#ffffff"] {
+    stroke: #263238;
+}
+/*# sourceMappingURL=Admin.css.map */
+
+
+.Cargando {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+    .Cargando label {
+        margin-top: 5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: rgb(250, 236, 209);
+    }
+
+    .Cargando .spinner {
+        filter: invert(1);
+    }
+
+        .Cargando .spinner:before {
+            transform: rotateX(60deg) rotateY(45deg) rotateZ(45deg);
+            animation: 750ms rotateBefore infinite linear reverse;
+        }
+
+        .Cargando .spinner:after {
+            transform: rotateX(240deg) rotateY(45deg) rotateZ(45deg);
+            animation: 750ms rotateAfter infinite linear;
+        }
+
+        .Cargando .spinner:before, .Cargando .spinner:after {
+            box-sizing: border-box;
+            content: "";
+            display: block;
+            position: absolute;
+            margin-top: -5em;
+            margin-left: -5em;
+            width: 10em;
+            height: 10em;
+            transform-style: preserve-3d;
+            transform-origin: 50%;
+            transform: rotateY(50%);
+            perspective-origin: 50% 50%;
+            perspective: 340px;
+            background-size: 10em 10em;
+            background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2NnB4IiBoZWlnaHQ9IjI5N3B4IiB2aWV3Qm94PSIwIDAgMjY2IDI5NyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+CiAgICA8dGl0bGU+c3Bpbm5lcjwvdGl0bGU+CiAgICA8ZGVzY3JpcHRpb24+Q3JlYXRlZCB3aXRoIFNrZXRjaCAoaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoKTwvZGVzY3JpcHRpb24+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8cGF0aCBkPSJNMTcxLjUwNzgxMywzLjI1MDAwMDM4IEMyMjYuMjA4MTgzLDEyLjg1NzcxMTEgMjk3LjExMjcyMiw3MS40OTEyODIzIDI1MC44OTU1OTksMTA4LjQxMDE1NSBDMjE2LjU4MjAyNCwxMzUuODIwMzEgMTg2LjUyODQwNSw5Ny4wNjI0OTY0IDE1Ni44MDA3NzQsODUuNzczNDM0NiBDMTI3LjA3MzE0Myw3NC40ODQzNzIxIDc2Ljg4ODQ2MzIsODQuMjE2MTQ2MiA2MC4xMjg5MDY1LDEwOC40MTAxNTMgQy0xNS45ODA0Njg1LDIxOC4yODEyNDcgMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IDE0NS4yNzczNDQsMjk2LjY2Nzk2OCBDMTQ1LjI3NzM0NCwyOTYuNjY3OTY4IC0yNS40NDkyMTg3LDI1Ny4yNDIxOTggMy4zOTg0Mzc1LDEwOC40MTAxNTUgQzE2LjMwNzA2NjEsNDEuODExNDE3NCA4NC43Mjc1ODI5LC0xMS45OTIyOTg1IDE3MS41MDc4MTMsMy4yNTAwMDAzOCBaIiBpZD0iUGF0aC0xIiBmaWxsPSIjMDAwMDAwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==");
+        }
+
+@keyframes rotateBefore {
+    from {
+        transform: rotateX(60deg) rotateY(45deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateX(60deg) rotateY(45deg) rotateZ(-360deg);
+    }
+}
+
+@keyframes rotateAfter {
+    from {
+        transform: rotateX(240deg) rotateY(45deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateX(240deg) rotateY(45deg) rotateZ(360deg);
+    }
+}
+/*# sourceMappingURL=Login.css.

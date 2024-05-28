@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = "~/Views/Shared/LoginPage.cshtml";
+}
+
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form id="formregister" action="/Account/Register" method="post">
+            <h1>Registrate</h1>
+            <div class="social-container">
+            </div>
+            <input type="text" name="Nombre" placeholder="Nombre" required />
+            <input type="text" name="ApellidoP" placeholder="ApellidoP" required />
+            <input type="text" name="ApellidoM" placeholder="ApellidoM" required />
+            <input type="number" name="Telefono" placeholder="Telefono" required />
+            <input type="text" name="Direccion" placeholder="Direccion" required />
+            <input type="text" name="Usuario" placeholder="Usuario" required />
+            <input type="password" name="Password" placeholder="Password" required />
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form id="formlogin" action="/Account/Login" method="post">
+            <h1>Login in</h1>
+            <div class="social-container">
+            </div>
+            <input type="text" name="Usuario" placeholder="Nombre" required />
+            <input type="password" name="Password" placeholder="Password" required/>
+            <button type="submit">Entrar!</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Hola lector!</h1>
+                <p>Ingresa tu informacion, eh inicia tu lectura</p>
+                <button class="ghost" id="signIn">Iniciar Sesion</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Bienvenido!</h1>
+                <p>Para conectarte, porfavor ingresa tus datos</p>
+                <button class="ghost" id="signUp">Registrarse</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alerta" id="alerta">
+    <div class="tools">
+        <div class="circle" id="cerrar">
+            <span class="box"></span>
+        </div>
+    </div>
+    <label id="msgAlerta">Registro exitoso, porfavor inicia sesion</label>
+</div>
+
+<div class="Cargando" id="Cargando">
+    <div class="spinner"></div>
+    <label> Cargando! </label>
+</div>
+
+<label id="hiddenMessage" style="display:none"> @ViewBag.Message</label>
+
+<script src="~/Scripts//Login.js"></script>
